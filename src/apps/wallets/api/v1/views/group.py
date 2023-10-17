@@ -4,9 +4,9 @@ from apps.wallets.models import WalletGroup
 from apps.wallets.api.v1.serializers import group as serializers
 
 
-class WalletGroupViewSet(viewsets.ModelViewSet[WalletGroup]):
+class WalletGroupViewSet(viewsets.ModelViewSet):
     queryset = WalletGroup.objects.all()
     serializer_class = serializers.WalletGroupSerializer
 
     def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
+        return self.queryset.filter(author=self.request.user)

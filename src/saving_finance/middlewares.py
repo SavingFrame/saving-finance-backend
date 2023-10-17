@@ -46,7 +46,7 @@ def get_current_user() -> User | None:
     return current_user
 
 
-def get_current_authenticated_user():
+def get_current_authenticated_user() -> User | None:
     current_user = get_current_user()
     if isinstance(current_user, (AnonymousUser, TokenUser)):
         return None

@@ -4,7 +4,7 @@ from apps.wallets.models import Wallet
 from apps.wallets.api.v1.serializers import wallet as serializers
 
 
-class WalletViewSet(viewsets.ModelViewSet[Wallet]):
+class WalletViewSet(viewsets.ModelViewSet):
     queryset = Wallet.objects.all()
     serializer_class = serializers.WalletSerializer
 
